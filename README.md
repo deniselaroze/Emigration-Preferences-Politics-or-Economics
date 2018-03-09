@@ -26,7 +26,7 @@ Conclusion: What will attract the highly-skilled migrants from a post-Brexit UK?
 
 
 ## Includes
-
+- Manuscript and Title page
 - R script with replication code for all tables and figures
 - Cleaned data files for the three conjoint experiments
 - Printout of the survey used for the experiment
