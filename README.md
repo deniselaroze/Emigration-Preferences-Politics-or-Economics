@@ -1,9 +1,13 @@
 # Post Brexit Emigration: Politics or Economics?
 
 Authors: 
+
 *Raymond M. Duch, Centre for Experimental Social Sciences, Nuffield College, University of Oxford, UK
-*Denise Laroze, Universidad de Santiago de Chile, Santiago, Chile 
+
+*Denise Laroze, CESS, Universidad de Santiago de Chile, Santiago, Chile 
+
 *Constantin Reinprecht, Department of Politics and International Relations, University of Oxford, and  
+
 *Thomas S. Robinson, Department of Politics and International Relations, University of Oxford 
 
 
