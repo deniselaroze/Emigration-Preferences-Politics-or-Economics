@@ -5,7 +5,7 @@
 ##                                                                            ##
 ##  Raymond Duch, Denise Laroze, Constantin Reinprecht, and Thomas Robinson   ##
 ##                                                                            ##
-##                                9th March 2018                              ##
+##                                11th April 2018                             ##
 ##                                                                            ##
 ################################################################################
 
@@ -17,7 +17,7 @@ library(dummies)
 library(nnet)
 library(stargazer)
 theme_set(theme_bw())
-setwd("/Users/tomrobinson/OneDrive/CESS/Trump Conjoint/Data")
+setwd("/Users/tomrobinson/OneDrive/CESS/Trump Conjoint/Data/SSQ Paper/")
 #setwd("/Users/Denise Laroze Prehn/Dropbox/CESS-Santiago/archive/Trump/Data")
 
 # Include code to replace standard errors with robust S.Es
@@ -170,56 +170,56 @@ stargazer(model3_controls_same0.clustrob,model3_controls_same1.clustrob,
 plotdf1 <- data.frame(estimate = coeftest(model1.clustrob, model1.clustrob$vcovCL)[,1],SE = coeftest(model1.clustrob, model1.clustrob$vcovCL)[,2])
 plotdf1 <- plotdf1[-1,]
 plotdf1 <- rbind(plotdf1[1,],
-                c(0,0),
-                plotdf1[2:11,])
+                 c(0,0),
+                 plotdf1[2:11,])
 plotdf1 <- rbind(plotdf1[1:4,],
-                c(0,0),
-                plotdf1[5:12,])
+                 c(0,0),
+                 plotdf1[5:12,])
 plotdf1 <- rbind(plotdf1[1:7,],
-                c(0,0),
-                plotdf1[8:13,])
+                 c(0,0),
+                 plotdf1[8:13,])
 plotdf1 <- rbind(plotdf1[1:10,],
-                c(0,0),
-                plotdf1[11:14,])
+                 c(0,0),
+                 plotdf1[11:14,])
 plotdf1 <- rbind(plotdf1[1:13,],
-                c(0,0),
-                plotdf1[14:15,])
+                 c(0,0),
+                 plotdf1[14:15,])
 plotdf1$coef <- c("Generous family allowance",
-                 "Basic minimum wage",
-                 "No minimum wage or income support",
-                 "GDP 2 percent",
-                 "GDP 4 percent",
-                 "GDP 6 percent",
-                 "Service salaries 50th pc",
-                 "Service salaries 70th pc",
-                 "Service salaries 90th pc",
-                 "Point-system visa",
-                 "Change in visa processing centres",
-                 "Muslim Ban",
-                 "University Ranking 40th pc",
-                 "University Ranking 60th pc",
-                 "University Ranking 90th pc",
-                 "Likelihood of emigrating")
+                  "Basic minimum wage",
+                  "No minimum wage or income support",
+                  "GDP 2 percent",
+                  "GDP 4 percent",
+                  "GDP 6 percent",
+                  "Service salaries 50th pc",
+                  "Service salaries 70th pc",
+                  "Service salaries 90th pc",
+                  "Point-system visa",
+                  "Change in visa processing centres",
+                  "Muslim Ban",
+                  "University Ranking 40th pc",
+                  "University Ranking 60th pc",
+                  "University Ranking 90th pc",
+                  "Likelihood of emigrating")
 
 plotdf1$coef <- factor(plotdf1$coef, levels = c("Likelihood of emigrating",
-                                              "University Ranking 90th pc",
-                                              "University Ranking 60th pc",
-                                              "University Ranking 40th pc",
-                                              "Muslim Ban",
-                                              "Change in visa processing centres",
-                                              "Point-system visa",
-                                              "Service salaries 90th pc",
-                                              "Service salaries 70th pc",
-                                              "Service salaries 50th pc",
-                                              "GDP 6 percent",
-                                              "GDP 4 percent",
-                                              "GDP 2 percent",
-                                              "No minimum wage or income support",
-                                              "Basic minimum wage",
-                                              "Generous family allowance",
-                                              "Intercept"))
+                                                "University Ranking 90th pc",
+                                                "University Ranking 60th pc",
+                                                "University Ranking 40th pc",
+                                                "Muslim Ban",
+                                                "Change in visa processing centres",
+                                                "Point-system visa",
+                                                "Service salaries 90th pc",
+                                                "Service salaries 70th pc",
+                                                "Service salaries 50th pc",
+                                                "GDP 6 percent",
+                                                "GDP 4 percent",
+                                                "GDP 2 percent",
+                                                "No minimum wage or income support",
+                                                "Basic minimum wage",
+                                                "Generous family allowance",
+                                                "Intercept"))
 
-              
+
 plotdf1$LCI <- plotdf1$estimate-1.96*plotdf1$SE
 plotdf1$UCI <- plotdf1$estimate+1.96*plotdf1$SE
 
@@ -239,57 +239,57 @@ ggsave(paste0("conjoint1.png" ,""), width = 15, height = 10, units = c("cm"), dp
 plotdf2 <- data.frame(estimate = coeftest(model2.clustrob, model2.clustrob$vcovCL)[,1],SE = coeftest(model2.clustrob, model2.clustrob$vcovCL)[,2])
 plotdf2 <- plotdf2[-1,]
 plotdf2 <- rbind(plotdf2[1,],
-                c(0,0),
-                plotdf2[2:11,])
+                 c(0,0),
+                 plotdf2[2:11,])
 plotdf2 <- rbind(plotdf2[1:4,],
-                c(0,0),
-                plotdf2[5:12,])
+                 c(0,0),
+                 plotdf2[5:12,])
 plotdf2 <- rbind(plotdf2[1:7,],
-                c(0,0),
-                plotdf2[8:13,])
+                 c(0,0),
+                 plotdf2[8:13,])
 plotdf2 <- rbind(plotdf2[1:10,],
-                c(0,0),
-                plotdf2[11:14,])
+                 c(0,0),
+                 plotdf2[11:14,])
 plotdf2 <- rbind(plotdf2[1:13,],
-                c(0,0),
-                plotdf2[14:15,])
+                 c(0,0),
+                 plotdf2[14:15,])
 plotdf2$coef <- c("Generous family allowance",
-                 "Basic minimum wage",
-                 "No minimum wage or income support",
-                 "GDP 2 percent",
-                 "GDP 4 percent",
-                 "GDP 6 percent",
-                 "Service salaries 50th pc",
-                 "Service salaries 70th pc",
-                 "Service salaries 90th pc",
-                 "Deportation of all illegal immigrants",
-                 "Change in visa processing centres",
-                 "Point-system visa",
-                 "University Ranking 40th pc",
-                 "University Ranking 60th pc",
-                 "University Ranking 90th pc",
-                 "Likelihood of emigrating")
+                  "Basic minimum wage",
+                  "No minimum wage or income support",
+                  "GDP 2 percent",
+                  "GDP 4 percent",
+                  "GDP 6 percent",
+                  "Service salaries 50th pc",
+                  "Service salaries 70th pc",
+                  "Service salaries 90th pc",
+                  "Deportation of all illegal immigrants",
+                  "Change in visa processing centres",
+                  "Point-system visa",
+                  "University Ranking 40th pc",
+                  "University Ranking 60th pc",
+                  "University Ranking 90th pc",
+                  "Likelihood of emigrating")
 
 plotdf2$LCI <- plotdf2$estimate-1.96*plotdf2$SE
 plotdf2$UCI <- plotdf2$estimate+1.96*plotdf2$SE
 
 plotdf2$coef <- factor(plotdf2$coef, levels = c("Likelihood of emigrating",
-                                              "University Ranking 90th pc",
-                                              "University Ranking 60th pc",
-                                              "University Ranking 40th pc",
-                                              "Deportation of all illegal immigrants",
-                                              "Change in visa processing centres",
-                                              "Point-system visa",
-                                              "Service salaries 90th pc",
-                                              "Service salaries 70th pc",
-                                              "Service salaries 50th pc",
-                                              "GDP 6 percent",
-                                              "GDP 4 percent",
-                                              "GDP 2 percent",
-                                              "No minimum wage or income support",
-                                              "Basic minimum wage",
-                                              "Generous family allowance",
-                                              "Intercept"))
+                                                "University Ranking 90th pc",
+                                                "University Ranking 60th pc",
+                                                "University Ranking 40th pc",
+                                                "Deportation of all illegal immigrants",
+                                                "Change in visa processing centres",
+                                                "Point-system visa",
+                                                "Service salaries 90th pc",
+                                                "Service salaries 70th pc",
+                                                "Service salaries 50th pc",
+                                                "GDP 6 percent",
+                                                "GDP 4 percent",
+                                                "GDP 2 percent",
+                                                "No minimum wage or income support",
+                                                "Basic minimum wage",
+                                                "Generous family allowance",
+                                                "Intercept"))
 
 ggplot(plotdf2, aes(x=coef)) +
   geom_point(y=plotdf2$estimate) +
@@ -305,57 +305,57 @@ ggsave(paste0("conjoint2.png" ,""), width = 15, height = 10, units = c("cm"), dp
 plotdf3 <- data.frame(estimate = coeftest(model3.clustrob, model3.clustrob$vcovCL)[,1],SE = coeftest(model3.clustrob, model3.clustrob$vcovCL)[,2])
 plotdf3 <- plotdf3[-1,]
 plotdf3 <- rbind(plotdf3[1,],
-                c(0,0),
-                plotdf3[2:11,])
+                 c(0,0),
+                 plotdf3[2:11,])
 plotdf3 <- rbind(plotdf3[1:4,],
-                c(0,0),
-                plotdf3[5:12,])
+                 c(0,0),
+                 plotdf3[5:12,])
 plotdf3 <- rbind(plotdf3[1:7,],
-                c(0,0),
-                plotdf3[8:13,])
+                 c(0,0),
+                 plotdf3[8:13,])
 plotdf3 <- rbind(plotdf3[1:10,],
-                c(0,0),
-                plotdf3[11:14,])
+                 c(0,0),
+                 plotdf3[11:14,])
 plotdf3 <- rbind(plotdf3[1:13,],
-                c(0,0),
-                plotdf3[14:15,])
+                 c(0,0),
+                 plotdf3[14:15,])
 plotdf3$coef <- c("Generous family allowance",
-                 "Basic minimum wage",
-                 "No minimum wage or income support",
-                 "GDP 2 percent",
-                 "GDP 4 percent",
-                 "GDP 6 percent",
-                 "Service salaries 50th pc",
-                 "Service salaries 70th pc",
-                 "Service salaries 90th pc",
-                 "Canada",
-                 "Australia",
-                 "U.S.A.",
-                 "University Ranking 40th pc",
-                 "University Ranking 60th pc",
-                 "University Ranking 90th pc",
-                 "Likelihood of emigrating")
+                  "Basic minimum wage",
+                  "No minimum wage or income support",
+                  "GDP 2 percent",
+                  "GDP 4 percent",
+                  "GDP 6 percent",
+                  "Service salaries 50th pc",
+                  "Service salaries 70th pc",
+                  "Service salaries 90th pc",
+                  "Canada",
+                  "Australia",
+                  "U.S.A.",
+                  "University Ranking 40th pc",
+                  "University Ranking 60th pc",
+                  "University Ranking 90th pc",
+                  "Likelihood of emigrating")
 
 plotdf3$LCI <- plotdf3$estimate-1.96*plotdf3$SE
 plotdf3$UCI <- plotdf3$estimate+1.96*plotdf3$SE
 
 plotdf3$coef <- factor(plotdf3$coef, levels = c("Likelihood of emigrating",
-                                              "University Ranking 90th pc",
-                                              "University Ranking 60th pc",
-                                              "University Ranking 40th pc",
-                                              "U.S.A.",
-                                              "Australia",
-                                              "Canada",
-                                              "Service salaries 90th pc",
-                                              "Service salaries 70th pc",
-                                              "Service salaries 50th pc",
-                                              "GDP 6 percent",
-                                              "GDP 4 percent",
-                                              "GDP 2 percent",
-                                              "No minimum wage or income support",
-                                              "Basic minimum wage",
-                                              "Generous family allowance",
-                                              "Intercept"))
+                                                "University Ranking 90th pc",
+                                                "University Ranking 60th pc",
+                                                "University Ranking 40th pc",
+                                                "U.S.A.",
+                                                "Australia",
+                                                "Canada",
+                                                "Service salaries 90th pc",
+                                                "Service salaries 70th pc",
+                                                "Service salaries 50th pc",
+                                                "GDP 6 percent",
+                                                "GDP 4 percent",
+                                                "GDP 2 percent",
+                                                "No minimum wage or income support",
+                                                "Basic minimum wage",
+                                                "Generous family allowance",
+                                                "Intercept"))
 
 ggplot(plotdf3, aes(x=coef)) +
   geom_point(y=plotdf3$estimate) +
@@ -375,26 +375,26 @@ plotdf3 <- cbind(plotdf3,treatment = "Treatment: 3")
 
 plotdf <- rbind(plotdf1,plotdf2,plotdf3)
 plotdf$coef <- factor(plotdf$coef, levels = c("Likelihood of emigrating",
-                                               "University Ranking 90th pc",
-                                               "University Ranking 60th pc",
-                                               "University Ranking 40th pc",
-                                               "U.S.A.",
-                                               "Australia",
-                                               "Canada",
-                                               "Deportation of all illegal immigrants",
-                                               "Muslim Ban",
-                                               "Change in visa processing centres",
-                                               "Point-system visa",
-                                               "Service salaries 90th pc",
-                                               "Service salaries 70th pc",
-                                               "Service salaries 50th pc",
-                                               "GDP 6 percent",
-                                               "GDP 4 percent",
-                                               "GDP 2 percent",
-                                               "No minimum wage or income support",
-                                               "Basic minimum wage",
-                                               "Generous family allowance",
-                                               "Intercept"))
+                                              "University Ranking 90th pc",
+                                              "University Ranking 60th pc",
+                                              "University Ranking 40th pc",
+                                              "U.S.A.",
+                                              "Australia",
+                                              "Canada",
+                                              "Deportation of all illegal immigrants",
+                                              "Muslim Ban",
+                                              "Change in visa processing centres",
+                                              "Point-system visa",
+                                              "Service salaries 90th pc",
+                                              "Service salaries 70th pc",
+                                              "Service salaries 50th pc",
+                                              "GDP 6 percent",
+                                              "GDP 4 percent",
+                                              "GDP 2 percent",
+                                              "No minimum wage or income support",
+                                              "Basic minimum wage",
+                                              "Generous family allowance",
+                                              "Intercept"))
 
 ggplot(data = plotdf, aes(x=coef)) +
   facet_grid(.~treatment) +
@@ -469,8 +469,8 @@ stargazer(model1_male.clustrob,model1_female.clustrob,model1_left.clustrob,model
                                "GDP 6 percent",
                                "Service salaries 70th pc",
                                "Service salaries 90th pc",
-                               "Muslim Ban",
                                "Point-system visa",
+                               "Muslim Ban",
                                "University Ranking 60th pc",
                                "University Ranking 90th pc",
                                "Likelihood of emigrating"),
@@ -487,8 +487,8 @@ stargazer(model2_male.clustrob,model2_female.clustrob,model2_left.clustrob,model
                                "GDP 6 percent",
                                "Service salaries 70th pc",
                                "Service salaries 90th pc",
-                               "Point-system visa",
                                "Deportation of all illegal immigrants",
+                               "Point-system visa",
                                "University Ranking 60th pc",
                                "University Ranking 90th pc",
                                "Likelihood of emigrating"),
@@ -609,9 +609,9 @@ plotdf$coef <- c("Intercept",
                  "Service salaries 50th pc",
                  "Service salaries 70th pc",
                  "Service salaries 90th pc",
-                 "Point-system visa",
-                 "Change in visa processing centres",
                  "Deportation of all illegal immigrants",
+                 "Change in visa processing centres",
+                 "Point-system visa",
                  "University Ranking 40th pc",
                  "University Ranking 60th pc",
                  "University Ranking 90th pc",
@@ -684,6 +684,11 @@ conjoint3$c.same <- NULL
 names(conjoint3)[names(conjoint3) == 'country'] <- 'immigration'
 conjoint <- rbind(conjoint1,conjoint2,conjoint3)
 
+conjoint <- within(conjoint, econ <- relevel(econ, ref = "Annual GDP Growth of 4%"))
+conjoint <- within(conjoint, service <- relevel(service, ref = "Average international ranking of service salaries: 70th Percentile"))
+conjoint <- within(conjoint, education <- relevel(education, ref = "Average international ranking of universities: 60th Percentile"))
+
+
 bal_social <- multinom(social ~ age + gender + likely + ideology, data = conjoint)
 bal_econ <- multinom(econ ~ age + gender + likely + ideology, data = conjoint)
 bal_service <- multinom(service ~ age + gender + likely + ideology, data = conjoint)
@@ -729,7 +734,7 @@ for (i in tab1a) {
            min(i, na.rm=TRUE),
            max(i, na.rm=TRUE),
            length(i[!is.na(i)])
-           )
+  )
   desc[nrow(desc)+1,] <- row
 }
 desc$Variable <- c("Age","Australia","Canada","U.S.A.","Interest","Likely","Ideology")
